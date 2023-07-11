@@ -1,6 +1,6 @@
 ﻿namespace Klinik_Kecantikan
 {
-    partial class Form3
+    partial class Perawatan
     {
         /// <summary>
         /// Required designer variable.
@@ -28,204 +28,221 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Perawatan));
             this.label1 = new System.Windows.Forms.Label();
-            this.txtIdDokter = new System.Windows.Forms.TextBox();
+            this.txtDRS = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtNama = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.cbxJK = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtJP = new System.Windows.Forms.TextBox();
+            this.txtHRG = new System.Windows.Forms.TextBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbxIDP = new System.Windows.Forms.ComboBox();
+            this.cbxIDD = new System.Windows.Forms.ComboBox();
+            this.txtPRWTN = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(157, 20);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(429, 169);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(154, 225);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(231, 99);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 16);
+            this.label1.Size = new System.Drawing.Size(105, 25);
             this.label1.TabIndex = 1;
-            this.label1.Text = "ID Dokter";
+            this.label1.Text = "Perawatan";
             // 
-            // txtIdDokter
+            // txtDRS
             // 
-            this.txtIdDokter.Location = new System.Drawing.Point(286, 219);
-            this.txtIdDokter.Name = "txtIdDokter";
-            this.txtIdDokter.Size = new System.Drawing.Size(186, 22);
-            this.txtIdDokter.TabIndex = 2;
+            this.txtDRS.Location = new System.Drawing.Point(422, 299);
+            this.txtDRS.Name = "txtDRS";
+            this.txtDRS.Size = new System.Drawing.Size(186, 22);
+            this.txtDRS.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(154, 264);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(230, 248);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
+            this.label2.Size = new System.Drawing.Size(157, 25);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Nama";
+            this.label2.Text = "Jenis Perawatan";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(154, 303);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(231, 295);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 16);
+            this.label3.Size = new System.Drawing.Size(68, 25);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Sex";
+            this.label3.Text = "Durasi";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(154, 341);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(231, 341);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 16);
+            this.label4.Size = new System.Drawing.Size(65, 25);
             this.label4.TabIndex = 5;
-            this.label4.Text = "No.Telepon";
+            this.label4.Text = "Harga";
             // 
-            // label5
+            // txtJP
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(154, 379);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 16);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Spesialisasi";
+            this.txtJP.Location = new System.Drawing.Point(422, 252);
+            this.txtJP.Name = "txtJP";
+            this.txtJP.Size = new System.Drawing.Size(186, 22);
+            this.txtJP.TabIndex = 7;
             // 
-            // txtNama
+            // txtHRG
             // 
-            this.txtNama.Location = new System.Drawing.Point(286, 258);
-            this.txtNama.Name = "txtNama";
-            this.txtNama.Size = new System.Drawing.Size(186, 22);
-            this.txtNama.TabIndex = 7;
+            this.txtHRG.Location = new System.Drawing.Point(422, 345);
+            this.txtHRG.Name = "txtHRG";
+            this.txtHRG.Size = new System.Drawing.Size(186, 22);
+            this.txtHRG.TabIndex = 9;
             // 
-            // textBox4
+            // btnAdd
             // 
-            this.textBox4.Location = new System.Drawing.Point(286, 335);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(186, 22);
-            this.textBox4.TabIndex = 9;
+            this.btnAdd.Location = new System.Drawing.Point(665, 133);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(86, 34);
+            this.btnAdd.TabIndex = 11;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // textBox5
+            // btnSave
             // 
-            this.textBox5.Location = new System.Drawing.Point(286, 373);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(186, 22);
-            this.textBox5.TabIndex = 10;
+            this.btnSave.Location = new System.Drawing.Point(665, 190);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(86, 34);
+            this.btnSave.TabIndex = 12;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // button1
+            // btnClear
             // 
-            this.button1.Location = new System.Drawing.Point(594, 257);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 34);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnClear.Location = new System.Drawing.Point(665, 247);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(86, 33);
+            this.btnClear.TabIndex = 13;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // button2
+            // btnBack
             // 
-            this.button2.Location = new System.Drawing.Point(594, 313);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 34);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnBack.Location = new System.Drawing.Point(30, 388);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(81, 32);
+            this.btnBack.TabIndex = 14;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // button3
+            // label6
             // 
-            this.button3.Location = new System.Drawing.Point(594, 372);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(86, 33);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Clear";
-            this.button3.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(231, 200);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 25);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Pasien";
             // 
-            // button4
+            // label7
             // 
-            this.button4.Location = new System.Drawing.Point(670, 42);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(81, 32);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Open";
-            this.button4.UseVisualStyleBackColor = true;
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(230, 152);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(69, 25);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Dokter";
             // 
-            // cbxJK
+            // cbxIDP
             // 
-            this.cbxJK.FormattingEnabled = true;
-            this.cbxJK.Location = new System.Drawing.Point(286, 296);
-            this.cbxJK.Name = "cbxJK";
-            this.cbxJK.Size = new System.Drawing.Size(121, 24);
-            this.cbxJK.TabIndex = 15;
+            this.cbxIDP.FormattingEnabled = true;
+            this.cbxIDP.Location = new System.Drawing.Point(422, 200);
+            this.cbxIDP.Name = "cbxIDP";
+            this.cbxIDP.Size = new System.Drawing.Size(186, 24);
+            this.cbxIDP.TabIndex = 18;
             // 
-            // Form3
+            // cbxIDD
+            // 
+            this.cbxIDD.FormattingEnabled = true;
+            this.cbxIDD.Location = new System.Drawing.Point(422, 152);
+            this.cbxIDD.Name = "cbxIDD";
+            this.cbxIDD.Size = new System.Drawing.Size(186, 24);
+            this.cbxIDD.TabIndex = 19;
+            // 
+            // txtPRWTN
+            // 
+            this.txtPRWTN.Location = new System.Drawing.Point(422, 99);
+            this.txtPRWTN.Name = "txtPRWTN";
+            this.txtPRWTN.Size = new System.Drawing.Size(186, 22);
+            this.txtPRWTN.TabIndex = 20;
+            // 
+            // Perawatan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.cbxJK);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.txtNama);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtPRWTN);
+            this.Controls.Add(this.cbxIDD);
+            this.Controls.Add(this.cbxIDP);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.txtHRG);
+            this.Controls.Add(this.txtJP);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtIdDokter);
+            this.Controls.Add(this.txtDRS);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
-            this.Name = "Form3";
+            this.Name = "Perawatan";
             this.Text = "Perawatan";
             this.Load += new System.EventHandler(this.Form3_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtIdDokter;
+        private System.Windows.Forms.TextBox txtDRS;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtNama;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox cbxJK;
+        private System.Windows.Forms.TextBox txtJP;
+        private System.Windows.Forms.TextBox txtHRG;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cbxIDP;
+        private System.Windows.Forms.ComboBox cbxIDD;
+        private System.Windows.Forms.TextBox txtPRWTN;
     }
 }

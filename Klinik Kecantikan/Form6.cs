@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace Klinik_Kecantikan
 {
-    public partial class Produk : Form
+    public partial class Form6 : Form
     {
-        public Produk()
+        public Form6()
         {
             InitializeComponent();
-        }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            HalamanUtama hu = new HalamanUtama();
-            hu.Show();
-            this.Hide();
         }
     }
 }

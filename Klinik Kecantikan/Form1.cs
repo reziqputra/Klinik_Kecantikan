@@ -31,5 +31,12 @@ namespace Klinik_Kecantikan
             dp.Show();
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Perawatan p = new Perawatan();
+            p.Show();
+            this.Hide();
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Klinik_Kecantikan
 {
-    partial class Form4
+    partial class Produk
     {
         /// <summary>
         /// Required designer variable.
@@ -28,23 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Produk));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.cbxIDPR = new System.Windows.Forms.ComboBox();
-            this.cbxIDP = new System.Windows.Forms.ComboBox();
+            this.cbxIDPasien = new System.Windows.Forms.ComboBox();
             this.txtNP = new System.Windows.Forms.TextBox();
             this.txtJP = new System.Windows.Forms.TextBox();
             this.txtHRG = new System.Windows.Forms.TextBox();
             this.btnBack = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnIDP = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(201, 74);
             this.label1.Name = "label1";
@@ -55,16 +59,18 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(201, 117);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 25);
+            this.label2.Size = new System.Drawing.Size(72, 25);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Id Pasien";
+            this.label2.Text = "Pasien";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(201, 161);
             this.label3.Name = "label3";
@@ -75,6 +81,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(201, 204);
             this.label4.Name = "label4";
@@ -85,6 +92,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(201, 246);
             this.label5.Name = "label5";
@@ -92,22 +100,14 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Harga";
             // 
-            // cbxIDPR
+            // cbxIDPasien
             // 
-            this.cbxIDPR.FormattingEnabled = true;
-            this.cbxIDPR.Location = new System.Drawing.Point(385, 74);
-            this.cbxIDPR.Name = "cbxIDPR";
-            this.cbxIDPR.Size = new System.Drawing.Size(189, 24);
-            this.cbxIDPR.TabIndex = 5;
-            // 
-            // cbxIDP
-            // 
-            this.cbxIDP.FormattingEnabled = true;
-            this.cbxIDP.IntegralHeight = false;
-            this.cbxIDP.Location = new System.Drawing.Point(385, 122);
-            this.cbxIDP.Name = "cbxIDP";
-            this.cbxIDP.Size = new System.Drawing.Size(189, 24);
-            this.cbxIDP.TabIndex = 6;
+            this.cbxIDPasien.FormattingEnabled = true;
+            this.cbxIDPasien.IntegralHeight = false;
+            this.cbxIDPasien.Location = new System.Drawing.Point(385, 122);
+            this.cbxIDPasien.Name = "cbxIDPasien";
+            this.cbxIDPasien.Size = new System.Drawing.Size(189, 24);
+            this.cbxIDPasien.TabIndex = 6;
             // 
             // txtNP
             // 
@@ -134,29 +134,67 @@
             // 
             this.btnBack.Location = new System.Drawing.Point(12, 12);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.Size = new System.Drawing.Size(75, 33);
             this.btnBack.TabIndex = 10;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // Form4
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(510, 377);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 33);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Clear";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(364, 377);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 33);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Save";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(219, 377);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 33);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "Add";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // btnIDP
+            // 
+            this.btnIDP.Location = new System.Drawing.Point(385, 78);
+            this.btnIDP.Name = "btnIDP";
+            this.btnIDP.Size = new System.Drawing.Size(189, 22);
+            this.btnIDP.TabIndex = 14;
+            // 
+            // Produk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnIDP);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txtHRG);
             this.Controls.Add(this.txtJP);
             this.Controls.Add(this.txtNP);
-            this.Controls.Add(this.cbxIDP);
-            this.Controls.Add(this.cbxIDPR);
+            this.Controls.Add(this.cbxIDPasien);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form4";
+            this.Name = "Produk";
             this.Text = "Produk Kecantikan";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -170,11 +208,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cbxIDPR;
-        private System.Windows.Forms.ComboBox cbxIDP;
+        private System.Windows.Forms.ComboBox cbxIDPasien;
         private System.Windows.Forms.TextBox txtNP;
         private System.Windows.Forms.TextBox txtJP;
         private System.Windows.Forms.TextBox txtHRG;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox btnIDP;
     }
 }

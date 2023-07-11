@@ -44,6 +44,68 @@ namespace Klinik_Kecantikan
         {
             dataGridView();
             btnOpen.Enabled = false;
+            btnDelete.Enabled = true;
+            btnUpdate.Enabled = true;
+            
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                txtIdPasien.Text = row.Cells["id_pasien"].Value.ToString();
+                txtNamaP.Text = row.Cells["nama_pasien"].Value.ToString();
+                txtUmur.Text = row.Cells["umur"].Value.ToString();
+                txtJK.Text = row.Cells["sex"].Value.ToString();
+                txtNoTelp.Text = row.Cells["no_telp"].Value.ToString();
+                txtAlamat.Text = row.Cells["alamat"].Value.ToString();
+                cbxStaff.Text = row.Cells["id_staff"].Value.ToString();
+                cbxJP.Text = row.Cells["id_perawatan"].Value.ToString();
+                cbxRK.Text = row.Cells["id_riwayat"].Value.ToString();
+            }
+            catch (Exception X)
+            {
+                MessageBox.Show(X.ToString());
+            }
+            txtIdPasien.Enabled = true;
+            txtUmur.Enabled = true;
+            txtNamaP.Enabled = true;
+            txtNoTelp.Enabled = true;
+            txtAlamat.Enabled = true;
+            cbxStaff.Enabled = true;
+            txtJK.Enabled = true;
+            cbxRK.Enabled = true;
+            cbxJP.Enabled = true;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Yakin Ingin Menghapus Data : " + txtIdPasien.Text + " ?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                koneksi.Open();
+                string queryString = "Delete dbo.Pasien where id_pasien='" + txtIdPasien.Text + "'";
+                SqlCommand cmd = new SqlCommand(queryString, koneksi);
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
+                koneksi.Close();
+                MessageBox.Show("Hapus Data Berhasil");
+                dataGridView();
+                refreshform();
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            koneksi.Open();
+            string queryString = "Update dbo.Pasien set id_staff='" + cbxStaff.Text + "', nama_pasien='" + txtNamaP.Text + "', no_telp='" + txtNoTelp.Text + "', sex='" + txtJK.Text + "', umur='" + txtUmur.Text + "', id_riwayat='" + cbxRK.Text + "', id_perawatan='" + cbxJP.Text + "', alamat='" + txtAlamat.Text + "' where id_pasien='" + txtIdPasien.Text + "'";
+            SqlCommand cmd = new SqlCommand(queryString, koneksi);
+            cmd.CommandType = CommandType.Text;
+            cmd.ExecuteNonQuery();
+            koneksi.Close();
+            MessageBox.Show("Update Data Berhasil");
+            dataGridView();
+            refreshform();
         }
 
         private void refreshform()
@@ -65,6 +127,9 @@ namespace Klinik_Kecantikan
             cbxRK.Enabled = false;
             txtJK.Enabled = false;
             btnAdd.Enabled = true;
+            btnOpen.Enabled = true;
+            btnDelete.Enabled = false;
+            btnUpdate.Enabled = false;
             btnSave.Enabled = false;
             btnClear.Enabled = false;
         }
@@ -81,6 +146,8 @@ namespace Klinik_Kecantikan
             cbxRK.Enabled=true;
             cbxJP.Enabled=true;
             btnAdd.Enabled = false;
+            btnDelete.Enabled = false;
+            btnUpdate.Enabled = false;
             btnSave.Enabled = true;
             btnClear.Enabled = true;
             Staffcbx();
@@ -173,6 +240,7 @@ namespace Klinik_Kecantikan
             cbxStaff.DisplayMember = "nama_staff";
             cbxStaff.ValueMember = "id_staff";
             cbxStaff.DataSource = ds.Tables[0];
+
         }
 
         private void RKcbx()

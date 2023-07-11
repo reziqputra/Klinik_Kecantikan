@@ -15,7 +15,7 @@ namespace Klinik_Kecantikan
     {
         private string stringConnection = "data source = MSI;" + "database=klinik_kecantikan;User ID = sa; Password = 12345";
         private SqlConnection koneksi;
-        private string idpasien, namapasien, umur, jk, notlp, alamat;
+        private string idpasien, namapasien, umur, jk, notlp, alamat, staff, jp, rk;
         public DataPasien()
         {
             InitializeComponent();
@@ -53,7 +53,9 @@ namespace Klinik_Kecantikan
             txtNamaP.Enabled = false;
             txtNoTelp.Enabled = false;
             txtAlamat.Enabled = false;
-            
+            cbxStaff.Enabled = false;
+            cbxJP.Enabled = false;
+            cbxRK.Enabled = false;
             cbxJK.Enabled = false;
             btnAdd.Enabled = true;
             btnSave.Enabled = false;
@@ -67,8 +69,9 @@ namespace Klinik_Kecantikan
             txtNamaP.Enabled = true;
             txtNoTelp.Enabled = true;
             txtAlamat.Enabled = true;
-
+            cbxStaff.Enabled = true;
             cbxJK.Enabled = true;
+            cbxRK.Enabled=true;
             btnAdd.Enabled = false;
             btnSave.Enabled = true;
             btnClear.Enabled = true;
@@ -90,8 +93,25 @@ namespace Klinik_Kecantikan
             koneksi.Open();
             string sr = "INSERT INTO Pasien (id_pasien, id_staff, nama_pasien, no_telp, sex, umur, id_riwayat, id_perawatan, alamat)" +
             "VALUES(@idpa,@ids,@nmp,@notlp,@sex,@umur,@idr,@idpe,@alamat) ";
-            SqlCommand cmd = new SqlCommand(strs, koneksi);
+            SqlCommand cmd = new SqlCommand(sr, koneksi);
             cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@idpa", idpasien);
+            cmd.Parameters.Add("@ids", staff);
+            cmd.Parameters.Add("@nmp", namapasien);
+            cmd.Parameters.Add("@notlp", notlp);
+            cmd.Parameters.Add("@sex", jk);
+            cmd.Parameters.Add("@umur", umur);
+            cmd.Parameters.Add("@rk", rk);
+            cmd.Parameters.Add("@idpe", jp);
+            cmd.Parameters.Add("@alamat", alamat);
+            cmd.ExecuteNonQuery();
+
+            koneksi.Close();
+
+            MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            refreshform();
+
+
         }
     }
 }

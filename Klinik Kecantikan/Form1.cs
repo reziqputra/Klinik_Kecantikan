@@ -38,5 +38,19 @@ namespace Klinik_Kecantikan
             p.Show();
             this.Hide();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Produk r = new Produk();
+            r.Show();
+            this.Hide();
+        }
+
+        private void btnRiwayat_Click(object sender, EventArgs e)
+        {
+            Dokter d = new Dokter();
+            d.Show();
+            this.Hide();
+        }
     }
 }

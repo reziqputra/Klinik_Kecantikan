@@ -76,6 +76,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "Produk";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnRiwayat
             // 
@@ -83,8 +84,9 @@
             this.btnRiwayat.Name = "btnRiwayat";
             this.btnRiwayat.Size = new System.Drawing.Size(159, 56);
             this.btnRiwayat.TabIndex = 4;
-            this.btnRiwayat.Text = "Riwayat";
+            this.btnRiwayat.Text = "Data Dokter";
             this.btnRiwayat.UseVisualStyleBackColor = true;
+            this.btnRiwayat.Click += new System.EventHandler(this.btnRiwayat_Click);
             // 
             // HalamanUtama
             // 

@@ -45,7 +45,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnOpen = new System.Windows.Forms.Button();
-            this.cbxJK = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,6 +53,7 @@
             this.cbxJP = new System.Windows.Forms.ComboBox();
             this.cbxRK = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.txtJK = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -201,14 +201,7 @@
             this.btnOpen.TabIndex = 16;
             this.btnOpen.Text = "Open";
             this.btnOpen.UseVisualStyleBackColor = true;
-            // 
-            // cbxJK
-            // 
-            this.cbxJK.FormattingEnabled = true;
-            this.cbxJK.Location = new System.Drawing.Point(524, 140);
-            this.cbxJK.Name = "cbxJK";
-            this.cbxJK.Size = new System.Drawing.Size(121, 24);
-            this.cbxJK.TabIndex = 17;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // btnSearch
             // 
@@ -281,12 +274,20 @@
             this.label9.Text = "Riwayat";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
+            // txtJK
+            // 
+            this.txtJK.Location = new System.Drawing.Point(524, 140);
+            this.txtJK.Name = "txtJK";
+            this.txtJK.Size = new System.Drawing.Size(203, 22);
+            this.txtJK.TabIndex = 26;
+            // 
             // DataPasien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtJK);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cbxRK);
             this.Controls.Add(this.cbxJP);
@@ -295,7 +296,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.cbxJK);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSave);
@@ -338,7 +338,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnOpen;
-        private System.Windows.Forms.ComboBox cbxJK;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label7;
@@ -347,5 +346,6 @@
         private System.Windows.Forms.ComboBox cbxJP;
         private System.Windows.Forms.ComboBox cbxRK;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtJK;
     }
 }

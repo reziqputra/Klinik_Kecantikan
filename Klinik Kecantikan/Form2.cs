@@ -39,6 +39,13 @@ namespace Klinik_Kecantikan
             hu.Show();
             this.Hide();
         }
+
+        private void btnOpen_Click(object sender, EventArgs e)
+        {
+            dataGridView();
+            btnOpen.Enabled = false;
+        }
+
         private void refreshform()
         {
             txtIdPasien.Text = "";
@@ -56,7 +63,7 @@ namespace Klinik_Kecantikan
             cbxStaff.Enabled = false;
             cbxJP.Enabled = false;
             cbxRK.Enabled = false;
-            cbxJK.Enabled = false;
+            txtJK.Enabled = false;
             btnAdd.Enabled = true;
             btnSave.Enabled = false;
             btnClear.Enabled = false;
@@ -70,11 +77,16 @@ namespace Klinik_Kecantikan
             txtNoTelp.Enabled = true;
             txtAlamat.Enabled = true;
             cbxStaff.Enabled = true;
-            cbxJK.Enabled = true;
+            txtJK.Enabled = true;
             cbxRK.Enabled=true;
+            cbxJP.Enabled=true;
             btnAdd.Enabled = false;
             btnSave.Enabled = true;
             btnClear.Enabled = true;
+            Staffcbx();
+            RKcbx();
+            JPcbx();
+
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -87,23 +99,58 @@ namespace Klinik_Kecantikan
             idpasien = txtIdPasien.Text;
             namapasien = txtNamaP.Text;
             umur = txtUmur.Text;
-            jk = cbxJK.Text;
+            jk = txtJK.Text;
             notlp = txtNoTelp.Text;
+            staff = cbxStaff.Text;
+            jp = cbxJP.Text;
+            rk = cbxRK.Text;
             alamat = txtAlamat.Text;
             koneksi.Open();
+            string strr = "select id_staff from dbo.Staff where nama_staff = @dd";
+            SqlCommand cm = new SqlCommand(strr, koneksi);
+            cm.CommandType = CommandType.Text;
+            cm.Parameters.Add(new SqlParameter("dd", staff));
+            SqlDataReader dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                staff = dr["id_staff"].ToString();
+            }
+            dr.Close();
+
+            string st = "select id_riwayat from dbo.Riwayat_Kesehatan where nama_penyakit = @pp";
+            SqlCommand cmm = new SqlCommand(st, koneksi);
+            cmm.CommandType = CommandType.Text;
+            cmm.Parameters.Add(new SqlParameter("@pp", rk));
+            SqlDataReader kr = cmm.ExecuteReader();
+            while (kr.Read())
+            {
+                rk = kr["id_riwayat"].ToString();
+            }
+            kr.Close();
+
+            string srr = "select id_perawatan from dbo.Jenis_Perawatan where nama_perawatan = @rr";
+            SqlCommand cmn = new SqlCommand(srr, koneksi);
+            cmn.CommandType = CommandType.Text;
+            cmn.Parameters.Add(new SqlParameter("@rr", jp));
+            SqlDataReader rd = cmn.ExecuteReader();
+            while (rd.Read())
+            {
+                jp = rd["id_perawatan"].ToString();
+            }
+            rd.Close();
             string sr = "INSERT INTO Pasien (id_pasien, id_staff, nama_pasien, no_telp, sex, umur, id_riwayat, id_perawatan, alamat)" +
             "VALUES(@idpa,@ids,@nmp,@notlp,@sex,@umur,@idr,@idpe,@alamat) ";
             SqlCommand cmd = new SqlCommand(sr, koneksi);
             cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add("@idpa", idpasien);
-            cmd.Parameters.Add("@ids", staff);
-            cmd.Parameters.Add("@nmp", namapasien);
-            cmd.Parameters.Add("@notlp", notlp);
-            cmd.Parameters.Add("@sex", jk);
-            cmd.Parameters.Add("@umur", umur);
-            cmd.Parameters.Add("@rk", rk);
-            cmd.Parameters.Add("@idpe", jp);
-            cmd.Parameters.Add("@alamat", alamat);
+            cmd.Parameters.Add("idpa", idpasien);
+            cmd.Parameters.Add("ids", staff);
+            cmd.Parameters.Add("nmp", namapasien);
+            cmd.Parameters.Add("notlp", notlp);
+            cmd.Parameters.Add("sex", jk);
+            cmd.Parameters.Add("umur", umur);
+            cmd.Parameters.Add("idr", rk);
+            cmd.Parameters.Add("idpe", jp);
+            cmd.Parameters.Add("alamat", alamat);
             cmd.ExecuteNonQuery();
 
             koneksi.Close();
@@ -112,6 +159,59 @@ namespace Klinik_Kecantikan
             refreshform();
 
 
+        }
+        private void Staffcbx()
+        {
+            koneksi.Open();
+            string str = "select nama_staff from dbo.Staff";
+            SqlCommand cmd = new SqlCommand(str, koneksi);
+            SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cmd.ExecuteReader();
+            koneksi.Close();
+            cbxStaff.DisplayMember = "nama_staff";
+            cbxStaff.ValueMember = "id_staff";
+            cbxStaff.DataSource = ds.Tables[0];
+        }
+
+        private void RKcbx()
+        {
+            koneksi.Open();
+            string str = "select nama_penyakit from dbo.Riwayat_Kesehatan";
+            SqlCommand cmd = new SqlCommand(str, koneksi);
+            SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cmd.ExecuteReader();
+            koneksi.Close();
+            cbxRK.DisplayMember = "nama_penyakit";
+            cbxRK.ValueMember = "id_riwayat";
+            cbxRK.DataSource = ds.Tables[0];
+        }
+        private void JPcbx()
+        {
+            koneksi.Open();
+            string str = "select nama_perawatan from dbo.Jenis_Perawatan";
+            SqlCommand cmd = new SqlCommand(str, koneksi);
+            SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cmd.ExecuteReader();
+            koneksi.Close();
+            cbxJP.DisplayMember = "nama_perawatan";
+            cbxJP.ValueMember = "id_perawatan";
+            cbxJP.DataSource = ds.Tables[0];
+        }
+        private void dataGridView()
+        {
+            koneksi.Open();
+            string str = "select * from dbo.Pasien";
+            SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            dataGridView1.DataSource = ds.Tables[0];
+            koneksi.Close();
         }
     }
 }

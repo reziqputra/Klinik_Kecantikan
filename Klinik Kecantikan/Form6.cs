@@ -105,6 +105,14 @@ namespace Klinik_Kecantikan
             IPcbx();
         }
 
+        private void btnOpen_Click(object sender, EventArgs e)
+        {
+            dataGridView();
+            btnOpen.Enabled = false;
+            btnDelete.Enabled = true;
+            btnUpdate.Enabled = true;
+        }
+
         private void dataGridView()
         {
             koneksi.Open();
@@ -125,8 +133,8 @@ namespace Klinik_Kecantikan
             da.Fill(ds);
             cmd.ExecuteReader();
             koneksi.Close();
-            cbxP.DisplayMember = "nama_dokter";
-            cbxP.ValueMember = "id_dokter";
+            cbxP.DisplayMember = "pengalaman";
+            cbxP.ValueMember = "id_pengalaman";
             cbxP.DataSource = ds.Tables[0];
         }
 
